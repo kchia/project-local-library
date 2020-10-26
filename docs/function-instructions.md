@@ -2,6 +2,8 @@
 
 The following functions can be completed in whichever order you choose. There are difficult problems associated with each page, so feel free to skip around as you work your way up to solving more challenging problems!
 
+> Reminder: All of the files you need to edit are inside of the `public/src/` directory.
+
 ---
 
 ### Account functions
@@ -22,6 +24,7 @@ It returns the account object that has the matching ID.
 ```javascript
 findAccountById(accounts, "5f446f2ecfaf0310387c9603");
 /*
+  Sample output:
   {
     "id": "5f446f2ecfaf0310387c9603",
     "name": {
@@ -39,13 +42,14 @@ The `sortAccountsByLastName()` function in `public/src/accounts.js` has a single
 
 - An array of accounts.
 
-It returns a sorted array of objects. The objects are sorted alphabetically by last name.
+It returns a sorted array of account objects. The objects are sorted alphabetically by last name.
 
 **Example:**
 
 ```javascript
 sortAccountsByLastName(accounts);
 /*
+  Sample output:
   [
     {
       "name": {
@@ -85,7 +89,7 @@ numberOfBorrows(account, books); // 22
 The `booksInPossession()` function in `public/src/accounts.js` has three parameters, in the following order:
 
 - An account object.
-- An array of all books objects.
+- An array of all book objects.
 - An array of all author objects.
 
 It returns an array of books and authors that represents all books _currently checked out_ by the given account. _Look carefully at the object below,_ as it's not just the book object; the author object is embedded inside of it.
@@ -95,6 +99,7 @@ It returns an array of books and authors that represents all books _currently ch
 ```javascript
 booksInPossession(account, books, authors);
 /*
+  Sample output:
   [
     {
       id: "5f447132320b4bc16f950076",
@@ -140,6 +145,7 @@ It returns the author object that has the matching ID.
 ```javascript
 findAuthorById(authors, 11);
 /*
+  Sample output:
   {
     id: 11,
     name: {
@@ -164,6 +170,7 @@ It returns the book object that has the matching ID.
 ```javascript
 findBookById(books, "5f447132320b4bc16f950076");
 /*
+  Sample output:
   {
     id: "5f447132320b4bc16f950076",
     title: "est voluptate nisi",
@@ -178,15 +185,16 @@ The `partitionBooksByBorrowedStatus()` function in `public/src/books.js` has a s
 
 - An array of books.
 
-It returns an array with two arrays inside of it. All of the inputted books are present in either the first or second array.
+It returns an array with two arrays inside of it. All of the inputted books should be present in either the first or second array.
 
-The first array contains books _that have been loaned out, and are not yet returned_ while the second array contains books _that have been returned._ You can check for the return status by looking at the first transaction in the `borrows` array.
+The first array contains books _that have been loaned out, and are not yet returned_ while the second array contains books _that have been returned._ You can check for the return status by looking at the first transaction in the `borrows` array of the book object.
 
 **Example:**
 
 ```javascript
 partitionBooksByBorrowedStatus(books);
 /*
+  Sample output:
   [
     [
       {
@@ -238,6 +246,7 @@ It should return an array of all the transactions from the book's `borrows` key.
 ```javascript
 getBorrowersForBook(book, accounts);
 /*
+  Sample output:
   [
     {
       id: "5f446f2e4eff1030e7316861",
@@ -309,7 +318,7 @@ The `booksBorrowedCount()` function in `public/src/home.js` has a single paramet
 
 - An array of books.
 
-It returns a number that represents the number of books _that have been taken out from the library._ This number can be found by looking at the first transaction in the `borrows` key of each book. If the transaction says the book has not been returned (i.e. `returned: false`), the book has been borrowed.
+It returns a number that represents the number of books _that have been taken out from the library._ This number can be found by looking at the first transaction in the `borrows` array of each book. If the transaction says the book has not been returned (i.e. `returned: false`), the book has been borrowed.
 
 **Example:**
 
@@ -337,6 +346,7 @@ If more than five genres are present, only the top five should be returned.
 ```javascript
 mostCommonGenres(books);
 /*
+  Sample output:
   [
     { name: "Nonfiction", count: 9 },
     { name: "Historical Fiction", count: 7 },
@@ -366,6 +376,7 @@ If more than five books are present, only the top five should be returned.
 ```javascript
 mostPopularBooks(books);
 /*
+  Sample output:
   [
     { name: "incididunt nostrud minim", count: 30 },
     { name: "culpa do sint", count: 30 },
@@ -382,7 +393,7 @@ The `mostPopularAuthors()` function in `public/src/home.js` has two parameters, 
 - An array of books.
 - An array of authors.
 
-It returns an array containing five objects or less that represents the most popular authors whose books have been checked out the most. Popularity is represented by finding all of the books written by the author and then adding up the number of times those books have been borrowed.
+It returns an array containing five objects or less that represents the most popular authors whose books have been checked out the most frequently. Popularity is represented by finding all of the books written by the author and then adding up the number of times those books have been borrowed.
 
 Each object in the returned array has two keys:
 
@@ -396,6 +407,7 @@ If more than five authors are present, only the top five should be returned.
 ```javascript
 mostPopularAuthors(books, authors);
 /*
+  Sample output:
   [
     { name: "Cristina Buchanan", count: 112 },
     { name: "Tami Hurst", count: 83 },

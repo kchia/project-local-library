@@ -8,7 +8,7 @@
 
 This project is designed to test your ability to work with large datasets and build algorithms based on those datasets. Before taking on this module, you should be comfortable with the learning objectives listed below. You will not need to make any edits to HTML or CSS for this project.
 
-## Learning Objectives
+## Learning objectives
 
 This project will assess the following learning objectives, in addition to many others:
 
@@ -19,16 +19,14 @@ This project will assess the following learning objectives, in addition to many 
 - Create an array from a string based on particular criteria and join arrays into strings.
 - Write strings that embed expressions using template literals.
 - Access all the values and keys of an object.
-- Use `.find()`, `.filter()`, `.map()`, `.some()`, and `.every()` to solve different problems.
-- Use `.reduce()` to solve different problems.
-- Use `.sort()` to sort arrays in various ways.
+- Use `.find()`, `.filter()`, `.map()`, `.some()`, `.every()`, `.reduce()`, and `.sort()` to solve different problems.
 
-## Project Setup
+## Project setup
 
 Follow the instructions below to get this project up and running on your own machine:
 
 - Fork and clone this repository.
-- Run `npm install`.
+- Run `npm install` to install the dependencies for this project.
 
 To run the tests, you can run the following command:
 
@@ -36,15 +34,19 @@ To run the tests, you can run the following command:
 npm test
 ```
 
-To watch how the code you write affects the application website, you can run the following command. This command will start a server and take over your terminal window. To stop the server from running, you can press `Ctrl + C`.
+You should see a message in your terminal saying that there are 20 failing tests. As you complete the project, more and more of these tests will pass!
+
+To watch how the code you write affects the application website, you can run the following command. This command will start a server and take over your terminal window.
 
 ```bash
 npm start
 ```
 
+To stop the server from running and regain control of the terminal, you can press `Ctrl + C`.
+
 ## Instructions
 
-You are tasked with building a number of different algorithms that will help complete the an administrative site for a local library. All of the functions will work on three common datasets. The datasets are related and at times you will need to work with multiple datasets to solve the problem at hand.
+You are tasked with building a number of different algorithms that will help complete an administrative site for a local library. All of the functions will involve data from three common datasets. The datasets are related and at times you will need to work with multiple datasets to solve the problem at hand.
 
 While working on these problems, you have both the tests and the live site to act as a guide. You can solve the tasks in any order and are encouraged to organize your code how you like.
 
@@ -65,11 +67,11 @@ If you feel as though one of your solutions is working but something isn't showi
 
 ## Datasets
 
-There are three datasets that are a part of this project: `accounts`, `authors`, and `books`.
+There are three datasets that are a part of this project: `accounts`, `authors`, and `books`. You can find them in the `public/data` directory.
 
 ### Accounts
 
-You can view all of the accounts data inside of the `public/data/` directory. Each account is an object with the following shape:
+Each account is an object with the following shape:
 
 ```json
 {
@@ -90,7 +92,7 @@ An account represents a person who is registered with the library. Accounts can 
 
 ### Authors
 
-You can view all of the authors data inside of the `public/data/` directory. Each author is object with the following shape:
+Each author is object with the following shape:
 
 ```json
 {
@@ -133,9 +135,9 @@ You can view all of the books data inside of the `public/data/` directory. Each 
 
 Each book represents a physical book but also contains additional information. In particular:
 
-- The `authorId` matches up with an author. It represents who wrote the book.
-- The `borrows` array is a list of transactions that have ocurred with this book. For example, in the example above the book has been borrowed three times.
-  - The `id` for each "borrow" record matches with an account ID. In the above example, the account with an ID of `"5f446f2e2a4fcd687493a775"` has not yet returned the book, meaning they still are in possession of it.
+- The `authorId` matches up the book with an author. It represents who wrote the book.
+- The `borrows` array is a list of transactions that have ocurred with this book. In the above example, the book has been borrowed three times, since there are three transaction objects in the array.
+  - The `id` property for each `"borrow"` record matches each transaction with an account ID, whereas the `returned` property is a boolean value representing whether or not the book has been returned. In the above example, the account with an ID of `"5f446f2e2a4fcd687493a775"` has not yet returned the book, meaning they still are in possession of it, so its `returned` value is set to `false`.
 
 ## Functions
 
